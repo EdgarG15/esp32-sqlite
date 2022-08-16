@@ -59,7 +59,7 @@ class _AddContactState extends State<AddContact> {
               lastnameController.clear();
               phoneNumberController.clear();
             },
-            child: const Text("GUARDAR")),
+            child: const Text("Guardar")),
       ],
     ));
   }

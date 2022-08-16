@@ -34,14 +34,23 @@ class _SqliteDartState extends State<SqliteDart> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.person_add),
-          onPressed: () async {
-            await showModalBottomSheet(
-                context: context, builder: (context) => AddContact());
-          },
+        // floatingActionButton: FloatingActionButton(
+        //   child: const Icon(Icons.person_add),
+        //   onPressed: () async {
+        //     await showModalBottomSheet(
+        //         context: context, builder: (context) => AddContact());
+        //   },
+        // ),
+        appBar: AppBar(
+          actions: [
+            IconButton(
+                onPressed: () async {
+                  await showModalBottomSheet(
+                      context: context, builder: (context) => AddContact());
+                },
+                icon: const Icon(Icons.add))
+          ],
         ),
-        appBar: AppBar(),
         body: Center(
           child: contacts.isEmpty
               ? Column(children: [Image.asset("assets/images/listEmpty.png")])
